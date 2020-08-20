@@ -32,5 +32,11 @@ namespace COMP123_Assignment5
             Program.selectForm.Show();
             Hide();
         }
+
+        private void OpenOrderButton_Click(object sender, EventArgs e)
+        {
+            Program.productInfoForm.Show();
+            Hide();
+        }
     }
 }

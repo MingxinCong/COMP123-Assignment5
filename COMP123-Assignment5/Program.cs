@@ -13,6 +13,7 @@ namespace COMP123_Assignment5
         public static SelectForm selectForm;
         public static ProductInfoForm productInfoForm;
         public static OrderForm orderForm;
+        public static product product;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
