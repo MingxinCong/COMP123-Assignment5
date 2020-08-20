@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="DollarComputersDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -100,6 +106,9 @@
     <Compile Include="StartForm.Designer.cs">
       <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,9 +166,11 @@
     <Folder Include="img\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\laptop.PNG" />
     <None Include="Resources\Dollar Computer.jpg" />
     <EmbeddedResource Include="Dollar Computer.jpg" />
     <EmbeddedResource Include="logo.PNG" />
+    <EmbeddedResource Include="laptop.PNG" />
     <Content Include="pc_case.ico" />
     <None Include="Resources\logo.PNG" />
   </ItemGroup>

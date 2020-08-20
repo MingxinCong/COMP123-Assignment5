@@ -511,7 +511,7 @@
             this.Name = "ProductInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product Information Form";
-            this.Shown += new System.EventHandler(this.ProductInfoForm_Shown);
+            this.Activated += new System.EventHandler(this.ProductInfoForm_Activated);
             this.productInfoMenuStrip.ResumeLayout(false);
             this.productInfoMenuStrip.PerformLayout();
             this.productInfoGroupBox.ResumeLayout(false);

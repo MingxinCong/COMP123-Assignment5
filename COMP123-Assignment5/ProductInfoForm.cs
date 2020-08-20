@@ -18,7 +18,6 @@ namespace COMP123_Assignment5
         {
             InitializeComponent();
             nextButton.Enabled = false;
-            PopulateTextBoxes();
         }
 
         private void PopulateTextBoxes()
@@ -59,8 +58,7 @@ namespace COMP123_Assignment5
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             productInfoOpenFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
-            DialogResult openFileDialogResult = productInfoOpenFileDialog.ShowDialog();
-
+            DialogResult openFileDialogResult = productInfoOpenFileDialog.ShowDialog();         
             if (openFileDialogResult != DialogResult.Cancel)
             {
                 StreamReader streamReader = new StreamReader(productInfoOpenFileDialog.FileName);
@@ -83,9 +81,10 @@ namespace COMP123_Assignment5
                 streamReader.Close();
                 nextButton.Enabled = true;
                 var context = new ProductModel();
-                var loadedProduct = from p in context.products
-                                    where p.productID.Equals(productIdTextBox.Text)
-                                    select p;
+                short productId = short.Parse(productIdTextBox.Text);
+                var loadedProduct = (from p in context.products
+                                    where p.productID.Equals(productId)
+                                     select p).ToList();
                 Program.product = loadedProduct.First();
             }
         }
@@ -125,7 +124,7 @@ namespace COMP123_Assignment5
             Hide();
         }
 
-        private void ProductInfoForm_Shown(object sender, EventArgs e)
+        private void ProductInfoForm_Activated(object sender, EventArgs e)
         {
             PopulateTextBoxes();
         }
